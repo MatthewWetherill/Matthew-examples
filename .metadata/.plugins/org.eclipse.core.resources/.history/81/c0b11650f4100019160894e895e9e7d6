@@ -1,0 +1,63 @@
+package labs;
+
+public class BankAccountApp {
+
+	public static void main(String[] args) {
+		
+		//Create new instance of BankAccount
+		BankAccount acc1 = new BankAccount("121345665", 1242.50);
+		acc1.makeDeposit(35.40);
+		acc1.makeWithdrawal(45.00);
+		
+	}
+
+}
+
+class BankAccount {
+	
+	//Properties of bank account
+	private static int iD = 1000; //Internal iD - static means stays with the class, not the object being created
+	private String accountNumber; // iD + random 2-digit number + first 2 SSN characters
+	private static final String routingNumber = "004304"; //static means with the class, not object (like iD) - final means can't be changed
+	private String name;
+	private String SSN;
+	private double balance;
+	
+	//Constructor
+	public BankAccount(String SSN, double initDeposit ) {
+		balance = initDeposit;
+		this.SSN = SSN; 
+		iD++;
+		setAccountNumber();
+	}
+	
+	//This method creates a random account number
+	private void setAccountNumber() {
+		int random = (int) (Math.random() * 100);
+		accountNumber = iD + "" + random + SSN.substring(0, 2);
+		System.out.println("Account Number: " + accountNumber);
+	}
+	
+	
+	//Getter and setter for name
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	//Methods for deposit and withdrawals
+	public void makeDeposit(double amount) {
+		balance = balance + amount;
+		System.out.println("Deposit: " + amount);
+		System.out.println("New Balance: " + balance);
+	}
+	
+	public void makeWithdrawal(double amount) {
+		balance = balance - amount;
+		System.out.println("Withdrawal: " + amount);
+		System.out.println("New Balance: " + balance);
+	}
+}

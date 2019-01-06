@@ -1,0 +1,48 @@
+package labs;
+
+public class StudentDatabaseSolution {
+
+public static void main(String[] args) {
+		
+	//Create a student
+	Student stu1 = new Student("Matthew", "112233445");	
+	
+	}
+	
+}
+
+class Student {
+	
+	//Properties
+	private static int iD = 1000;
+	private int userId;
+	private String name;
+	private String ssn;
+	private String email;
+	
+	//Constructor
+	public Student(String name, String ssn) {
+		iD++;
+		this.name = name;
+		this.ssn = ssn;
+		setUserId();
+		setEmail();
+	}
+	
+	//Email generator method
+	private void setEmail() {
+		email = name.toLowerCase() + "." + iD + "@studb.com";
+		System.out.println("Email: " + email);
+	}
+	
+	//User ID generator method
+	private void setUserId() {
+		//set range for random number between 1000 and 9000
+		int max = 9000;
+		int min = 1000;
+		int randNum = (int) (Math.random() * (max - min)); // (max - min) calculates range of numbers, this gives number between 0 - 8000
+		randNum = randNum + min; //this now makes randNum fall between 1000 and 9000
+		System.out.println("User ID: " + randNum);
+	}
+	
+}

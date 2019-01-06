@@ -1,0 +1,42 @@
+package labs;
+
+public class StudentDatabaseSolution {
+
+public static void main(String[] args) {
+		
+	//Create a student
+	Student stu1 = new Student("Matthew", "112233445");	
+	
+	}
+	
+}
+
+class Student {
+	
+	//Properties
+	private static int iD = 1000;
+	private String name;
+	private String ssn;
+	private String email;
+	
+	//Constructor
+	public Student(String name, String ssn) {
+		iD++;
+		this.name = name;
+		this.ssn = ssn;
+		setAccountId();
+		setEmail();
+	}
+	
+	//Email generator method
+	private void setEmail() {
+		email = name.toLowerCase() + "." + iD + "@studb.com";
+		System.out.println("Email: " + email);
+	}
+	
+	//Account ID generator
+	private void setAccountId() {
+		
+	}
+	
+}

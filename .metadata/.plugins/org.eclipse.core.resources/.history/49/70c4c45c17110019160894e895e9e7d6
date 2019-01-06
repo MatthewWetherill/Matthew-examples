@@ -1,0 +1,32 @@
+package labs;
+
+public class StudentDatabase {
+
+	public static void main(String[] args) {
+		
+		NewStudent newStu1 = new NewStudent("Matthew", "Wetherill", "11223344");
+	}
+
+}
+
+class NewStudent {
+	
+	//Properties of new student
+	private static int dbRef = 1000;
+	private String firstName;
+	private String lastName;
+	private String SSN;
+	private String phone;
+	private String County;
+	private String City;
+	private String stuId;
+	
+	//Constructor
+	public NewStudent(String firstName, String lastName, String SSN) {
+		System.out.println("NEW STUDENT REGISTERED: " + firstName + " " + lastName);
+		dbRef++;
+		System.out.println("DATABASE REF: " + dbRef);
+	}
+	
+	
+}

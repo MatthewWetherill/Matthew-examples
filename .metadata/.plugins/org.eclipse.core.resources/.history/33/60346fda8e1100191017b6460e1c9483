@@ -1,0 +1,33 @@
+package labs;
+
+public class StudentDatabaseSolution {
+
+public static void main(String[] args) {
+		
+	//Create a student
+	Student stu1 = new Student("Matthew", "112233445");	
+	
+	}
+	
+}
+
+class Student {
+	
+	//Properties
+	private String name;
+	private String ssn;
+	private String email;
+	
+	//Constructor
+	public Student(String name, String ssn) {
+		this.name = name;
+		this.ssn = ssn;
+		setEmail();
+	}
+	
+	private void setEmail() {
+		email = name + "@studb.com";
+		system.out.println("Email: " + email);
+	}
+	
+}

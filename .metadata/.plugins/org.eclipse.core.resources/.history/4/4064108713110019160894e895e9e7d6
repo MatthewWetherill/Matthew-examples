@@ -1,0 +1,56 @@
+package labs;
+
+public class StudentDatabase {
+
+	public static void main(String[] args) {
+		
+		NewStudent newStu1 = new NewStudent("Matthew", "Wetherill", "11223344");
+		newStu1.setFirstName("Matthew");
+		newStu1.setLastName("Wetherill");
+		newStu1.getFisrtName();
+		newStu1.getLastName();
+	}
+
+}
+
+class NewStudent {
+	
+	//Properties of new student
+	private static int dataId = 1000;
+	private String firstName;
+	private String lastName;
+	private String SSN;
+	
+	//Constructor
+	public NewStudent(String firstName, String lastName, String SSN) {
+		System.out.println("NEW STUDENT REGISTERED");
+		dataId++;
+		System.out.println("Database ID: " + dataId);
+		createEmail();
+	}
+	
+	//method for creating an email address
+	public String createEmail() {
+		String email = firstName + "." + lastName + "@studentdatabase.com";
+		return email;
+	}
+	
+	//getters/setters for first/last name
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	
+	public String getFisrtName() {
+		return firstName;
+	}
+	
+	public void setLastName(String lastName) {
+		this.lastName =lastName;
+	}
+	
+	public String getLastName() {
+		return lastName;
+	}
+	
+	
+}
